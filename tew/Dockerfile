@@ -44,6 +44,7 @@ RUN set -ex; \
         "; \
         \
         pythonPkgs=" \
+            ipython3 \
             python3 \
             python3-dev \
             python3-pip \
