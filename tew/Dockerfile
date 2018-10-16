@@ -4,13 +4,6 @@ MAINTAINER RStudio Quality <qa@rstudio.com>
 ENV LC_ALL=C.UTF-8
 ENV LANG=C.UTF-8
 
-ARG AWS_REGION=us-east-1
-
-# Use EC2 (Cloudfront) apt source instead of default redirecting mirror.
-RUN set -ex; \
-        \
-        sed -i "s/archive.ubuntu.com/$AWS_REGION.ec2.archive.ubuntu.com/" /etc/apt/sources.list;
-
 # Install basic development & debugging tools
 RUN set -ex; \
         \
