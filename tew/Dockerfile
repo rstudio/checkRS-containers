@@ -20,6 +20,7 @@ RUN set -ex; \
 
 # Copy in Python package requirements files
 WORKDIR /opt/work
+COPY dev-requirements.txt dev-requirements.txt
 COPY requirements.txt requirements.txt
 
 # Install build dependencies and Python packages
@@ -52,7 +53,8 @@ RUN set -ex; \
         \
         python3 -m pip install --no-cache-dir setuptools; \
         python3 -m pip install --no-cache-dir -r requirements.txt; \
-        rm -f requirements; \
+        python3 -m pip install --no-cache-dir -r dev-requirements.txt; \
+        rm -f requirements.txt dev-requirements.txt; \
         \
         apt-get purge -y --auto-remove $buildDeps;
 
