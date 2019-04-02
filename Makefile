@@ -1,4 +1,4 @@
-all: tew browserstacklocal
+all: tew browserstacklocal deploy
 
 tew:
 	docker build -t rstudio/checkrs-tew tew
@@ -6,14 +6,13 @@ tew:
 browserstacklocal:
 	docker build -t rstudio/checkrs-browserstacklocal browserstacklocal
 
+deploy:
+	docker build -t rstudio/checkrs-deploy deploy
+
 clean:
 
 distclean: clean
 
 test:
 
-.PHONY: all
-.PHONY: tew
-.PHONY: clean
-.PHONY: distclean
-.PHONY: test
+.PHONY: all browserstacklocal clean deploy distclean test tew
