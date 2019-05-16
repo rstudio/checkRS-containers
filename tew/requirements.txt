@@ -1,3 +1,4 @@
+fabric=2.4.0
 pytest==3.6.0
 pytest-axe==1.1.6
 pytest-repeat==0.4.1
@@ -6,5 +7,5 @@ pytest-selenium==1.13.0
 pytest-test-groups==1.0.3
 pytest-xdist==1.22.2
 requests==2.20.0
-selenium==3.11.0
+selenium==3.141.0
 git+https://github.com/yashaka/selene.git@1.0.0a13#egg=selene
