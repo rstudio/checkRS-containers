@@ -20,8 +20,8 @@ RUN set -ex; \
 
 # Copy in Python package requirements files
 WORKDIR /opt/work
-COPY dev-requirements.txt dev-requirements.txt
-COPY requirements.txt requirements.txt
+COPY Pipfile Pipfile
+COPY Pipfile.lock Pipfile.lock
 
 # Install build dependencies and Python packages
 # these build dependencies are only needed to compile
@@ -51,10 +51,9 @@ RUN set -ex; \
         ln -s /usr/bin/python3 /usr/bin/python; \
         ln -s /usr/bin/pydoc3 /usr/bin/pydoc; \
         \
-        python3 -m pip install --no-cache-dir setuptools; \
-        python3 -m pip install --no-cache-dir -r requirements.txt; \
-        python3 -m pip install --no-cache-dir -r dev-requirements.txt; \
-        rm -f requirements.txt dev-requirements.txt; \
+        python3 -m pip install --no-cache-dir pipenv; \
+        pipenv install --system --dev; \
+        rm -f Pipfile Pipfile.lock; \
         \
         apt-get purge -y --auto-remove $buildDeps;
 
