@@ -1,4 +1,4 @@
-FROM ubuntu:bionic-20180526
+FROM ubuntu:bionic-20190807
 MAINTAINER RStudio Quality <qa@rstudio.com>
 
 ENV LC_ALL=C.UTF-8
@@ -52,7 +52,7 @@ RUN set -ex; \
         ln -s /usr/bin/pydoc3 /usr/bin/pydoc; \
         \
         python3 -m pip install --no-cache-dir pipenv; \
-        pipenv install --system --dev; \
+        pipenv install --system --dev --pre; \
         rm -f Pipfile Pipfile.lock; \
         \
         apt-get purge -y --auto-remove $buildDeps;
