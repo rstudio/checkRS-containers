@@ -32,7 +32,7 @@ pip install -U pipenv
 Pipfile and Pipfile.lock are artifacts of pipenv. They hold detailed information about the versions and SHA256 hashes of packages. Use the following command to install packages into your local pyenv based Python environment:
 
 ```
-pipenv install --dev
+pipenv install --dev --pre
 ```
 
 #### Adding new packages to Pipfile and Pipfile.lock
@@ -45,6 +45,15 @@ pipenv install packagename
 
 Where `packagename` is the name of the package you want to install
 
+#### Update all packages in Pipfile.lock
+
+To update all of the Python packages in the Pipfile.lock to their latest versions and install those latest version in the virtualenv, use:
+
+```
+pipenv update --dev --pre
+```
+
+In the example above, we specify `--dev` to update the main packages and development packages. We also specify `--pre` to allow for pre-released software to be installed. This is particularly needed for the black code formatting package.
 
 ### Building the Docker image
 
