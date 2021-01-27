@@ -13,9 +13,8 @@ RUN set -ex; \
             curl \
             jq \
             make \
-           openssh-server \
+            openssh-server \
             wget; \
-        \
         rm -rf /var/lib/apt/lists/*;
 
 
