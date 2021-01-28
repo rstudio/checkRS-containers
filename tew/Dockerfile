@@ -13,8 +13,8 @@ RUN set -ex; \
             curl \
             jq \
             make \
-            openssh-server \
             wget; \
+        \
         rm -rf /var/lib/apt/lists/*;
 
 
@@ -84,7 +84,6 @@ RUN set -ex; \
 # Create user named "docker" with empty password (will have uid and gid 1000)
 RUN useradd --create-home --shell /bin/bash docker \
     && passwd docker -d
+
 # Change the password to "docker"
 RUN echo 'docker:docker' | chpasswd
-USER docker
-WORKDIR /home/docker

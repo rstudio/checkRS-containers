@@ -21,9 +21,6 @@ requests = "*"
 selenium = "*"
 selene = {git = "https://github.com/yashaka/selene.git",ref = "1.0.0a13"}
 fuzzbucket-client = {file = "https://cdn.rstudio.com/connect/fuzzbucket/0.6.1/fuzzbucket_client-0.6.1-py3-none-any.whl"}
-wheel = "*"
-setuptools-scm = "*"
-setuptools = ">=41.0"
 
 [requires]
 python_version = "3.6"
