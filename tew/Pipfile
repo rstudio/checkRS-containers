@@ -18,8 +18,12 @@ pytest-test-groups = "*"
 pytest-xdist = "*"
 python-dateutil = "*"
 requests = "*"
-selenium = "*"
+selenium = "==3.141.0"
 selene = {git = "https://github.com/yashaka/selene.git",ref = "1.0.0a13"}
+fuzzbucket-client = {file = "https://cdn.rstudio.com/connect/fuzzbucket/0.6.1/fuzzbucket_client-0.6.1-py3-none-any.whl"}
 
 [requires]
 python_version = "3.6"
+
+[pipenv]
+allow_prereleases = true
