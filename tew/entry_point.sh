@@ -12,10 +12,8 @@ GROUP_ID=$(id -g)
 if [ x"$USER_ID" != x"0" -a x"$USER_ID" != x"1000" ]; then
 
     # set the new passwd and group files
-    #NSS_WRAPPER_PASSWD=/tmp/passwd.nss_wrapper
-    #NSS_WRAPPER_GROUP=/tmp/group.nss_wrapper
-    NSS_WRAPPER_PASSWD=/etc/passwd
-    NSS_WRAPPER_GROUP=/etc/group
+    NSS_WRAPPER_PASSWD=/tmp/passwd.nss_wrapper
+    NSS_WRAPPER_GROUP=/tmp/group.nss_wrapper
 
     # overwrite the old uid and gid for the user
     cat /etc/passwd | sed -e "s/^docker:x:1000:1000:/docker:x:$USER_ID:$GROUP_ID:/" > $NSS_WRAPPER_PASSWD
